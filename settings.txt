@@ -1,0 +1,8 @@
+Ro0t96
+www
+Apache24
+php748
+7.4.8
+php7apache2_4.dll
+mysql8021
+db

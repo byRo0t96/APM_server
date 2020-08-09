@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cpanel</title>
+<link href="server/template/fonts/Iceland/Iceland.css" type="text/css" rel="stylesheet" />
+<style type="text/css">
+html, body{
+padding: 0;
+margin: 0;
+height: 100%;
+width: 100%;
+background-color: #fff;
+}
+.by_form{
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+	width: 100%;
+}
+.version{
+	text-align:right;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.green{
+background-color: #4CAF50; /* Green */
+}
+.red{
+background-color: #f00; /* red */
+}
+.blue{
+background-color: rgb(3, 81, 246); /* blue */
+}
+</style>
+<hta:application
+id="Cpanel"
+icon="server\template\img\Ro0t-96_v3.ico"
+version="1.0"
+contextmenu="no"
+singleinstance="yes"
+applicationname="Cpanel"
+border="thin"
+borderStyle="normal"
+caption="yes"
+maximizeButton="no"
+minimizeButton="yes"
+showInTaskbar="yes"
+windowState="normal"
+innerBorder="yes"
+navigable="no"
+scroll="auto"
+scrollFlat="yes"
+sysMenu="yes"
+selection="no"
+>
+<script language="VBScript">
+Sub Window_onLoad
+window.offscreenBuffering = True
+End Sub
+</script>
+</head>
+<body SCROLL="no">
+<input class="button green" type="button" Value="First use" onClick="first_use();">
+<input class="button blue" type="button" Value="About" onClick="about();">
+<input class="button blue" type="button" Value="Help?" onClick="help();">
+<input class="button red" type="button" Value="Donate :)" onClick="donate();">
+<center><h1>Cpanel</h1></center>
+
+<table>
+<tr>
+<td style="width:130px;"><b>Apache, php </b>[x64,x86]</td><td><input class="button green" type="button" Value="start" onClick="start_apache_php();"></td>
+<td><input class="button red" type="button" Value="config" onClick="configuration();"></td>
+</tr>
+<br>
+<tr>
+<td style="width:150px;"><b>MySqli </b>[x64,<del>x86]</del></td><td><input type="button" Value="start" onClick="start_mysqli();" class="button green"></td>
+<td><input type="button" Value="config" onClick="mysql_configuration();" class="button red"></td>
+<td><input type="button" Value="admin" onClick="mysql_admin();" class="button blue"></td>
+</tr>
+</table>
+
+
+<div class="by_form">
+<h4 style="color: #black;">From</h4>
+<h3 style="color:#f00;margin-top: -20px;">Ro0t96</h3>
+<div class="version">v.1.20.2</div>
+</div>
+
+<script type="text/javascript">
+window.resizeTo(400,500);
+function first_use(){
+    var shell = new ActiveXObject("WScript.Shell");
+    var path = '"first_use.bat"';
+    shell.run(path,1,false);
+}
+
+function start_apache_php(){
+    var shell = new ActiveXObject("WScript.Shell");
+    var path = '"apache_php.bat"';
+    shell.run(path,1,false);
+}
+
+function start_mysqli(){
+    var shell = new ActiveXObject("WScript.Shell");
+    var path = '"mysql.bat"';
+    shell.run(path,1,false);
+}
+
+function mysql_configuration(){
+    var shell = new ActiveXObject("WScript.Shell");
+    var path = '"mysql_configuration.bat"';
+    shell.run(path,1,false);
+}
+function mysql_admin(){
+    var shell = new ActiveXObject("WScript.Shell");
+    var path = '"mysql_admin.bat"';
+    shell.run(path,1,false);
+}
+function configuration(){
+    var shell = new ActiveXObject("WScript.Shell");
+    var path = '"apache_php_configuration.bat"';
+    shell.run(path,1,false);
+}
+function about(){
+    alert('This program is free and available to everyone.\n Programmed by: Boudjada Yasser (Ro0t96).\n Email: by.root96@gmail.com.\n Phone:(+213)699.50.63.17.\n version: 1.20.2\n');
+}
+function donate(){
+alert('Bitcoin: 39zpRApjkLn1ARjiikKXNAu1Z4gGZGvNLT \nDogecoin: DKTmN8QhbBp2Q9L9ya4VWFNjG8qLNpkUMN');
+}
+function help(){
+alert('-To use the first time you have to press "config" button. \n-You can activate what you need by pressing "start" button. \n-If you change the location of the server, computer, or USB key, or if you encounter any problem in operating, you should click on "config" button.');
+}
+</script>
+</body>
+</html>

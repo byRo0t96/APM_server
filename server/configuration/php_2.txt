@@ -1,0 +1,208 @@
+
+; Directory where the temporary files should be placed.
+; Defaults to the system default (see sys_get_temp_dir)
+;sys_temp_dir = "/tmp"
+
+; Whether or not to enable the dl() function.  The dl() function does NOT work
+; properly in multithreaded servers, such as IIS or Zeus, and is automatically
+; disabled on them.
+; http://php.net/enable-dl
+enable_dl = Off
+
+; cgi.force_redirect is necessary to provide security running PHP as a CGI under
+; most web servers.  Left undefined, PHP turns this on by default.  You can
+; turn it off here AT YOUR OWN RISK
+; **You CAN safely turn this off for IIS, in fact, you MUST.**
+; http://php.net/cgi.force-redirect
+;cgi.force_redirect = 1
+
+; if cgi.nph is enabled it will force cgi to always sent Status: 200 with
+; every request. PHP's default behavior is to disable this feature.
+;cgi.nph = 1
+
+; if cgi.force_redirect is turned on, and you are not running under Apache or Netscape
+; (iPlanet) web servers, you MAY need to set an environment variable name that PHP
+; will look for to know it is OK to continue execution.  Setting this variable MAY
+; cause security issues, KNOW WHAT YOU ARE DOING FIRST.
+; http://php.net/cgi.redirect-status-env
+;cgi.redirect_status_env =
+
+; cgi.fix_pathinfo provides *real* PATH_INFO/PATH_TRANSLATED support for CGI.  PHP's
+; previous behaviour was to set PATH_TRANSLATED to SCRIPT_FILENAME, and to not grok
+; what PATH_INFO is.  For more information on PATH_INFO, see the cgi specs.  Setting
+; this to 1 will cause PHP CGI to fix its paths to conform to the spec.  A setting
+; of zero causes PHP to behave as before.  Default is 1.  You should fix your scripts
+; to use SCRIPT_FILENAME rather than PATH_TRANSLATED.
+; http://php.net/cgi.fix-pathinfo
+;cgi.fix_pathinfo=1
+
+; if cgi.discard_path is enabled, the PHP CGI binary can safely be placed outside
+; of the web tree and people will not be able to circumvent .htaccess security.
+;cgi.discard_path=1
+
+; FastCGI under IIS supports the ability to impersonate
+; security tokens of the calling client.  This allows IIS to define the
+; security context that the request runs under.  mod_fastcgi under Apache
+; does not currently support this feature (03/17/2002)
+; Set to 1 if running under IIS.  Default is zero.
+; http://php.net/fastcgi.impersonate
+;fastcgi.impersonate = 1
+
+; Disable logging through FastCGI connection. PHP's default behavior is to enable
+; this feature.
+;fastcgi.logging = 0
+
+; cgi.rfc2616_headers configuration option tells PHP what type of headers to
+; use when sending HTTP response code. If set to 0, PHP sends Status: header that
+; is supported by Apache. When this option is set to 1, PHP will send
+; RFC2616 compliant header.
+; Default is zero.
+; http://php.net/cgi.rfc2616-headers
+;cgi.rfc2616_headers = 0
+
+; cgi.check_shebang_line controls whether CGI PHP checks for line starting with #!
+; (shebang) at the top of the running script. This line might be needed if the
+; script support running both as stand-alone script and via PHP CGI<. PHP in CGI
+; mode skips this line and ignores its content if this directive is turned on.
+; http://php.net/cgi.check-shebang-line
+;cgi.check_shebang_line=1
+
+;;;;;;;;;;;;;;;;
+; File Uploads ;
+;;;;;;;;;;;;;;;;
+
+; Whether to allow HTTP file uploads.
+; http://php.net/file-uploads
+file_uploads = On
+
+; Temporary directory for HTTP uploaded files (will use system default if not
+; specified).
+; http://php.net/upload-tmp-dir
+;upload_tmp_dir =
+
+; Maximum allowed size for uploaded files.
+; http://php.net/upload-max-filesize
+upload_max_filesize = 2M
+
+; Maximum number of files that can be uploaded via a single request
+max_file_uploads = 20
+
+;;;;;;;;;;;;;;;;;;
+; Fopen wrappers ;
+;;;;;;;;;;;;;;;;;;
+
+; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
+; http://php.net/allow-url-fopen
+allow_url_fopen = On
+
+; Whether to allow include/require to open URLs (like http:// or ftp://) as files.
+; http://php.net/allow-url-include
+allow_url_include = Off
+
+; Define the anonymous ftp password (your email address). PHP's default setting
+; for this is empty.
+; http://php.net/from
+;from="john@doe.com"
+
+; Define the User-Agent string. PHP's default setting for this is empty.
+; http://php.net/user-agent
+;user_agent="PHP"
+
+; Default timeout for socket based streams (seconds)
+; http://php.net/default-socket-timeout
+default_socket_timeout = 60
+
+; If your scripts have to deal with files from Macintosh systems,
+; or you are running on a Mac and need to deal with files from
+; unix or win32 systems, setting this flag will cause PHP to
+; automatically detect the EOL character in those files so that
+; fgets() and file() will work regardless of the source of the file.
+; http://php.net/auto-detect-line-endings
+;auto_detect_line_endings = Off
+
+;;;;;;;;;;;;;;;;;;;;;;
+; Dynamic Extensions ;
+;;;;;;;;;;;;;;;;;;;;;;
+
+; If you wish to have an extension loaded automatically, use the following
+; syntax:
+;
+;   extension=modulename
+;
+; For example:
+;
+;   extension=mysqli
+;
+; When the extension library to load is not located in the default extension
+; directory, You may specify an absolute path to the library file:
+;
+;   extension=/path/to/extension/mysqli.so
+;
+; Note : The syntax used in previous PHP versions ('extension=<ext>.so' and
+; 'extension='php_<ext>.dll') is supported for legacy reasons and may be
+; deprecated in a future PHP major version. So, when it is possible, please
+; move to the new ('extension=<ext>) syntax.
+;
+; Notes for Windows environments :
+;
+; - Many DLL files are located in the extensions/ (PHP 4) or ext/ (PHP 5+)
+;   extension folders as well as the separate PECL DLL download (PHP 5+).
+;   Be sure to appropriately set the extension_dir directive.
+;
+
+extension=curl
+extension=gd2
+extension=mbstring
+extension=mysql
+extension=pdo_mysql
+extension=xmlrpc
+
+[mail function]
+; For Win32 only.
+SMTP = mail.myisp.com
+smtp_port = 25
+
+; For Win32 only.
+sendmail_from = ro0t96@ro0t96.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;extension=bz2
+;extension=curl
+;extension=ffi
+;extension=ftp
+;extension=fileinfo
+;extension=gd2
+;extension=gettext
+;extension=gmp
+;extension=intl
+;extension=imap
+;extension=ldap
+;extension=mbstring
+;extension=exif      ; Must be after mbstring as it depends on it
+;extension=mysqli
+;extension=oci8_12c  ; Use with Oracle Database 12c Instant Client
+;extension=odbc
+;extension=openssl
+;extension=pdo_firebird
+;extension=pdo_mysql
+;extension=pdo_oci
+;extension=pdo_odbc
+;extension=pdo_pgsql
+;extension=pdo_sqlite
+;extension=pgsql
+;extension=shmop
+

@@ -1,0 +1,41 @@
+windows:
+----
+Apache
+http://www.apachelounge.com/download/
+
+Apache 2.4.46 Win64
+https://www.apachelounge.com/download/VS16/binaries/httpd-2.4.46-win64-VS16.zip
+
+Apache 2.4.46 Win32
+https://www.apachelounge.com/download/VS16/binaries/httpd-2.4.46-win32-VS16.zip
+
+----
+Php
+http://www.php.net/downloads.php
+
+VC15 x64 Thread Safe (2020-Aug-04 15:17:50)
+https://windows.php.net/downloads/releases/php-7.4.9-Win32-vc15-x64.zip
+
+VC15 x86 Thread Safe (2020-Aug-04 15:17:57)
+https://windows.php.net/downloads/releases/php-7.4.9-Win32-vc15-x86.zip
+
+----
+phpmyadmin
+https://www.phpmyadmin.net/downloads/
+
+phpMyAdmin 5.0.2
+https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-all-languages.zip
+
+----
+mysql
+http://dev.mysql.com/downloads/
+https://dev.mysql.com/downloads/mysql/
+
+Mysql (x86, 64-bit)
+https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.21-winx64.zip
+
+-------------------
+linux:
+
+
+

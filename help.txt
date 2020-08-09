@@ -1,0 +1,9 @@
+Edit file 'settings.txt'.
+---- line 1 - empty.
+---- line 2 - server folder name (DocumentRoot).
+---- line 3 - Apache folder name.
+---- line 4 - php folder name.
+---- line 5 - php version (for example '7.4.8').
+---- line 6 - .dll file used (for example php 7 and apache 2.4 = 'php7apache2_4.dll').
+---- line 7 - mysql folder name.
+---- line 8 - databases folder name.
